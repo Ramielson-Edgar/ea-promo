@@ -155,6 +155,8 @@ html {
     padding: 70px 0;
 }
 
+ 
+
 .insurance-promo-main .insurance-promo-accent-color {
     color: $accent-blue-header-color;
 }
@@ -253,8 +255,10 @@ html {
 //hero// 
 
 .insurance-promo-main .ea-promo {
+    position: relative;
     color: $white-color;
-    background: radial-gradient(113.9% 113.9% at 70% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 41.81%), #272F46, ;
+    background: radial-gradient(765px 765px at 70% 50%,
+     rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 41.81%), #272F46,;
 }
 
 .insurance-promo-main .ea-promo__title {
@@ -268,15 +272,15 @@ html {
 
 
 .insurance-promo-main .ea-promo__sub-description {
-    font-weight: 100;
-    line-height: 27px;
+    line-height:30px;
+ font-weight: 300;
 }
 
 
 .insurance-promo-main .ea-promo__sub-description,
 .insurance-promo-main .ea-promo__description,
 .insurance-promo-main .ea-promo__list {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 
@@ -899,10 +903,14 @@ html {
     .insurance-promo-main .ea-promo__sub-description,
     .insurance-promo-main .ea-promo__description,
     .insurance-promo-main .ea-promo__list {
-        margin-bottom: 30px;
+        margin-bottom:24px;
     }
 
-
+    
+.ea-promo__sub-description {
+    font-size: 14px;
+    line-height: 20px;
+}
 
 }
 
@@ -910,6 +918,11 @@ html {
 @media (max-width:991.98px) {
     .insurance-promo-main .insurance-promo-hero {
         background-position: top;
+    }
+
+    .insurance-promo-main   .ea-promo__sub-description {
+        font-size: 1rem;
+        line-height: 30px;
     }
 
     .insurance-promo-main .insurance-promo__hero-title {
@@ -1194,8 +1207,6 @@ html {
 }
 
 
-
-
 @media (max-width: 575.98px) {
     .insurance-promo-main .ea-promo__list {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1366,6 +1377,12 @@ html {
         font-size: 1.1rem;
 
     }
+
+    .insurance-promo-main .ea-promo {
+background:  radial-gradient(500px 500px at 50% 16%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 41.81%), #272F46;
+    }
+
+    
 }
 
 @media (max-width:375px) {
