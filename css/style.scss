@@ -1,0 +1,1410 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+$main-font: 'Roboto', sans-serif;
+
+$font-size-50: 3.125rem;
+$font-size-40: 2.5rem;
+$font-size-30: 1.875rem;
+$font-size-25: 1.563rem;
+$font-size-20: 1.25rem;
+$font-size-18: 1.125rem;
+$font-size-16: 1rem;
+$font-size-14: 0.875rem;
+$font-size-13: 0.188rem;
+
+
+$dark-text: #313539;
+$dar-text-btn: #292929;
+$grey-text: #444444;
+$grey-text-motivation: #6F6F6F;
+
+$accent-blue-header-color: #098CFF;
+$motivation-accent-header-color: #084887;
+$banner-link-color: #73D8FF;
+$step-active-dashes: #00B8FF;
+$banner-bg-color: #567CF1;
+
+
+$primary-btn-color: #6BF5DD;
+$slider-btn-active-color: #0185FF;
+$banner-btn-color: #F9AB55;
+
+
+$white-color: #fff;
+$background-grey: #FBFBFB;
+$main-background-color: #F9FAFF;
+$grey-line: #F3F1F1;
+
+
+$font-weight-700: 700;
+$font-weight-400: 400;
+$font-weight-300: 300;
+
+
+
+@mixin center-flex($type: 'all') {
+    display: flex;
+
+    @if ($type =='all') {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @else if ($type =='hor') {
+        justify-content: center;
+    }
+
+    @else if ($type =='ver') {
+        align-items: center;
+    }
+}
+
+
+@mixin responsive-grid ($gap, $width) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+    gap: $gap;
+}
+
+
+
+%img-default-property {
+    background-repeat: no-repeat;
+}
+
+
+%list-defaults {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.insurance-promo-slider__container.owl-theme .owl-nav [class*=owl-]:hover {
+    background: transparent;
+}
+
+.insurance-promo-slider__container.owl-theme .owl-dots .owl-dot span {
+    width: 39px;
+    height: 4px;
+    background: #D9D9D9;
+    border-radius: 15px;
+    transition: all .3s ease-in-out;
+}
+
+.insurance-promo-slider__container.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    width: 18px;
+    height: 4px;
+    background-color: $accent-blue-header-color;
+
+}
+
+.insurance-promo-slider__container.owl-theme .owl-dots {
+    margin-top: 30px;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.insurance-promo-main *,
+.insurance-promo-main *::after,
+.insurance-promo-main *::before {
+    box-sizing: inherit;
+}
+
+
+.insurance-promo-main {
+    font-family: $main-font;
+    font-weight: $font-weight-400;
+    font-size: $font-size-16;
+    line-height: 24px;
+    color: $dark-text;
+    background-color: $white-color;
+}
+
+.insurance-promo-main h1,
+.insurance-promo-main h2,
+.insurance-promo-main h3,
+.insurance-promo-main p {
+    margin: 0;
+    padding: 0;
+}
+
+.insurance-promo-main h1,
+.insurance-promo-main h2 {
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+}
+
+.insurance-promo-main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.insurance-promo-main a {
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+}
+
+.insurance-promo-main .insurance-promo-padding {
+    padding: 70px 0;
+}
+
+.insurance-promo-main .insurance-promo-accent-color {
+    color: $accent-blue-header-color;
+}
+
+.btn-size-lg {
+    padding: 18px 50px;
+}
+
+.btn-size-md {
+    padding: 16px 20px;
+}
+
+.btn-size-small {
+    padding: 10px 20px;
+}
+
+.insurance-promo-main .insurance-promo-btn-link {
+    display: inline-block;
+    font-size: $font-size-16;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transform: translateY(0);
+    transition: all .3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-5px);
+        text-decoration: none;
+    }
+}
+
+
+.insurance-promo-main .insurance-promo-btn-link__primary {
+    color: $dark-text;
+    background-color: $primary-btn-color;
+
+    &:hover,
+    &:focus {
+        color: $white-color;
+        background-color: #62E3CD;
+    }
+}
+
+
+.insurance-promo-main .insurance-promo-btn-link__secondary {
+    background-color: $slider-btn-active-color;
+    color: $white-color;
+
+    &:hover,
+    &:focus {
+        color: $accent-blue-header-color;
+        border: 1px solid #1A87EC;
+        background-color: transparent;
+    }
+
+}
+
+.insurance-promo-main .insurance-promo-btn-link__third {
+    color: $white-color;
+    background-color: $banner-btn-color;
+
+    &:hover,
+    &:focus {
+        color: $dark-text;
+        background-color: #E88921;
+    }
+}
+
+.insurance-promo-main .btn-red-green {
+    background-color: #EA6C6C;
+    color: $white-color;
+
+    &:hover,
+    &:focus {
+        color: $white-color;
+        background-color: #47DFC5;
+    }
+
+}
+
+.insurance-promo-main .btn-green-red {
+    background-color: #47DFC5;
+    color: $white-color;
+
+    &:hover,
+    &:focus {
+        color: $white-color;
+        background-color: #EA6C6C;
+    }
+
+}
+
+//hero// 
+
+.insurance-promo-main .ea-promo {
+    color: $white-color;
+    background: radial-gradient(113.9% 113.9% at 70% 50%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 41.81%), #272F46, ;
+}
+
+.insurance-promo-main .ea-promo__title {
+    display: flex;
+    font-size: clamp(3.13rem, calc(2.43rem + 3.48vw), 5.13rem);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+
+
+.insurance-promo-main .ea-promo__sub-description {
+    font-weight: 100;
+    line-height: 27px;
+}
+
+
+.insurance-promo-main .ea-promo__sub-description,
+.insurance-promo-main .ea-promo__description,
+.insurance-promo-main .ea-promo__list {
+    margin-bottom: 40px;
+}
+
+
+.insurance-promo-main .ea-promo__description {
+    font-size: clamp(1.00rem, calc(-2.57rem + 4.76vw), 1.13rem);
+    line-height: 27px;
+}
+
+.insurance-promo-main .ea-promo__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @extend %list-defaults
+}
+
+.insurance-promo-main .ea-promo__item {
+    display: flex;
+}
+
+.insurance-promo-main .ea-promo__item::before {
+    display: inline-block;
+    content: '';
+
+    width: 23px;
+    height: 23px;
+
+    background: #47DFC5;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    margin-right: 14px;
+
+    background-image: url('../icons/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+}
+
+
+.insurance-promo-main .ea-promo__item-text {
+    text-transform: capitalize;
+}
+
+//insurance-promo-motivation //
+.insurance-promo-main .ea-promo__motivation-header {
+    margin-bottom: 70px;
+}
+
+.insurance-promo-main .ea-promo__motivation-title {
+    margin-bottom: 24px;
+}
+
+.insurance-promo-main .ea-promo__motivation-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 100px;
+}
+
+.insurance-promo-main .insurance-promo__header-line {
+    position: relative;
+    padding-left: 37%;
+}
+
+.insurance-promo-main .insurance-promo__header-line::before {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: "";
+    width: 342px;
+    max-width: 100%;
+    height: 1px;
+
+    background-color: $grey-line;
+}
+
+.insurance-promo-main .insurance-promo__header {
+    margin-bottom: 65px;
+}
+
+.insurance-promo-main .ea-promo__motivation-description {
+    line-height: 30px;
+}
+
+
+.insurance-promo-main .ea-promo__motivation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    @extend %list-defaults;
+}
+
+
+.insurance-promo-main .insurance-promo-slider__header,
+.insurance-promo-main .ea-promo-part__footer-header,
+.insurance-promo-main .ea-promo-bonus__header {
+    font-size: $font-size-25;
+    font-weight: $font-weight-700;
+    text-transform: capitalize;
+    color: #2E3C6A;
+    margin-bottom: 28px;
+}
+
+.insurance-promo-main .ea-promo-part__footer-header {
+    color: #5B80F1;
+
+}
+
+.insurance-promo-main .ea-promo__motivation-item-header {
+    font-size: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+    font-weight: $font-weight-700;
+    color: #2E3C6A;
+    margin-bottom: 28px;
+}
+
+.insurance-promo-main .ea-promo__motivation-item-description {
+    color: $grey-text-motivation;
+    max-width: 280px;
+}
+
+//ea-promo-bonus//
+.insurance-promo-main .insurance-promo__title {
+    margin-bottom: 25px;
+}
+
+.insurance-promo-main .ea-promo-bonus__list {
+    @extend %list-defaults;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 11px;
+}
+
+.insurance-promo-main .ea-promo-bonus__header {
+    margin-bottom: 15px;
+}
+
+.insurance-promo-main .ea-promo-bonus__header,
+.insurance-promo-main .ea-promo-bonus__item {
+    color: #fff;
+}
+
+.insurance-promo-main .ea-promo-bonus__item {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #272F46;
+    border-radius: 20px;
+    padding: 60px 35px 40px;
+}
+
+
+.insurance-promo-main .ea-promo-bonus__item::before {
+    position: absolute;
+    left: -133px;
+    top: -201px;
+
+    display: block;
+    content: "";
+    width: 324px;
+    height: 324px;
+
+    opacity: 0.05;
+    border-radius: 50%;
+    border: 50px solid #FFFFFF;
+
+}
+
+.insurance-promo-main  .ea-promo-bonus__svg {
+    fill: $white-color;
+}
+
+.insurance-promo-main .ea-promo-bonus__icon {
+    margin-bottom: 30px;
+}
+
+.insurance-promo-main .ea-promo-bonus__description {
+    font-size: 0.813rem;
+}
+
+.insurance-promo-main .ea-promo-note {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.insurance-promo-main .ea-promo-note::before {
+    position: absolute;
+    left: -121px;
+    top: -71px;
+
+    display: block;
+    content: "";
+
+    width: 324px;
+    height: 324px;
+
+    opacity: 0.1;
+    border: 50px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.ea-promo-note__content {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    align-items: center;
+    gap: 100px;
+    margin-left: 90px;
+}
+
+
+//ea-promo__note//
+.insurance-promo-main .ea-promo-note {
+    color: $white-color;
+    background-color: #567CF1;
+}
+
+.insurance-promo-main .ea-promo-note__text {
+    font-size: clamp(1.00rem, calc(0.01rem + 1.61vw), 1.25rem);
+    line-height: 30px;
+}
+
+//insurance-promo-part// 
+
+.insurance-promo-main .insurance-promo-part {
+    background-color: $main-background-color;
+}
+
+.insurance-promo-main .insurance-promo-part__header {
+    margin-bottom: 85px;
+
+}
+
+.insurance-promo-main .insurance-promo-part__list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 90px;
+
+    margin-bottom: 43px;
+
+    @extend %list-defaults;
+}
+
+.ea-promo-part-item {
+    background-image: url('/img/ea-promo-steps.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.insurance-promo-main .insurance-promo-part__footer-header::first-letter {
+    text-transform: uppercase;
+}
+
+.insurance-promo-main .insurance-promo-link,
+.insurance-promo-main .insurance-promo-email {
+    display: inline-block;
+    color: $accent-blue-header-color;
+    text-decoration: underline;
+}
+
+.insurance-promo-main .insurance-promo-part__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 650px;
+}
+
+.insurance-promo-main .insurance-promo-part__description {
+    max-width: 377px;
+}
+
+.insurance-promo-main .ea-promo-part__footer-description {
+    font-size: 0.875rem;
+    line-height: 21px;
+}
+
+.insurance-promo-main .insurance-promo-part__img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 167px;
+    height: 300px;
+
+    margin-bottom: 45px;
+    border-radius: 160px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.insurance-promo-main .insurance-promo-part__icon {
+    margin-bottom: 70px;
+    filter: drop-shadow(-20px 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+.insurance-promo-main .insurance-promo__step-container {
+    position: relative;
+}
+
+
+.insurance-promo-main .insurance-promo__step-first {
+    position: absolute;
+    top: 150px;
+    left: 220px;
+    z-index: 10;
+
+    &::before {
+        display: block;
+        content: "";
+
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+
+        background-color: $accent-blue-header-color;
+    }
+}
+
+.insurance-promo-main .insurance-promo__dash-second,
+.insurance-promo-main .insurance-promo__dash {
+    position: absolute;
+    top: 6px;
+    left: 0;
+
+    display: block;
+    width: 128px;
+    height: 3px;
+
+    background: repeating-linear-gradient(90deg,
+            $main-background-color 20px,
+            $main-background-color 30px,
+            $accent-blue-header-color 30px,
+            $accent-blue-header-color 40px);
+
+    animation: steps 2s linear infinite;
+    z-index: -1;
+
+}
+
+.insurance-promo-main .insurance-promo__step-second {
+    position: absolute;
+    top: 150px;
+    right: 520px;
+    z-index: 10;
+}
+
+.insurance-promo-main .insurance-promo__dash-second {
+    width: 140px;
+}
+
+
+@keyframes steps {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+//insurance-promo-banner //
+.insurance-promo-main .insurance-promo-slider,
+.insurance-promo-main .insurance-promo-banner {
+    background-color: $main-background-color;
+}
+
+.insurance-promo-main .ea-promo-banner__theme-blue {
+    background: radial-gradient(538px 538px at 20% 50%, rgb(255, 255, 255, .6) 0%, rgba(255, 255, 255, 0) 100%), $banner-bg-color;
+    border-radius: 5px;
+}
+
+.insurance-promo-main .insurance-promo-banner__header {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    gap: 37px;
+    color: $white-color;
+}
+
+.insurance-promo-main .insurance-promo-banner__title {
+    font-size: $font-size-30;
+    line-height: 41.01px;
+}
+
+.insurance-promo-main .insurance-promo-banner__description {
+    max-width: 433px;
+    line-height: 36px;
+}
+
+.insurance-promo-main .insurance-promo-link__blue {
+    color: $banner-link-color;
+
+    &:hover,
+    &:focus {
+        color: #4FFFFF;
+    }
+}
+
+
+//slider //
+
+.insurance-promo-main .insurance-promo-slider__item {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background-color: $white-color;
+    border-radius: 25px;
+    height: 186px;
+
+}
+
+.insurance-promo-main .insurance-promo-slider__header {
+    color: $dark-text;
+    margin-bottom: 16px;
+}
+
+.insurance-promo-main .insurance-promo-slider__icon {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(118.84deg, #47DFC5 70%, rgb(255, 255, 255) 70%)
+}
+
+.insurance-promo-main .insurance-promo-slider__icon>svg {
+    margin-left: 90px;
+}
+
+.insurance-promo-main .insurance-promo-slider__body {
+    padding: 25px;
+}
+
+.insurance-promo-main .insurance-promo-slider__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100px;
+
+    color: $accent-blue-header-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $accent-blue-header-color;
+        text-decoration: none;
+    }
+}
+
+.insurance-promo-main .insurance-promo-slider__arrow-info {
+    transform: translateX(-5px);
+    transition: all .3s ease-in-out;
+}
+
+.insurance-promo-main .insurance-promo-slider__link:hover .insurance-promo-slider__arrow-info,
+.insurance-promo-main .insurance-promo-slider__link:focus .insurance-promo-slider__arrow-info {
+    transform: translateX(10px);
+
+}
+
+
+.insurance-promo-main .insurance-promo-slider__header {
+    margin-bottom: 16px;
+}
+
+.insurance-promo-main .insurance-promo-slider__description {
+    max-width: 528px;
+    color: $grey-text;
+    margin-bottom: 22px;
+}
+
+.insurance-promo-main .insurance-promo__description {
+    margin-bottom: 69px;
+}
+
+.insurance-promo-main .insurance-promo-boost__wrapper {
+    max-width: 446px;
+    border-top: 1px solid $grey-line;
+}
+
+.insurance-promo-main .insurance-promo-boost__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @extend %list-defaults;
+    padding-top: 43px;
+    margin-bottom: 50px;
+}
+
+.insurance-promo-main .insurance-promo-boost__header {
+    display: block;
+    margin: 0 auto;
+    max-width: 630px;
+}
+
+
+//option slider arrow//
+.insurance-promo-main .slider-icon-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+}
+
+.insurance-promo-main .slider-icon-arrow {
+    background-color: $white-color;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all .3s ease-in-out;
+}
+
+.insurance-promo-slider__container {
+    position: relative;
+}
+
+.insurance-promo-slider__container.owl-theme .owl-nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.insurance-promo-main .icon-arrow__left {
+    position: absolute;
+    left: 0;
+}
+
+.insurance-promo-main .icon-arrow__right {
+    position: absolute;
+    right: 0;
+}
+
+.insurance-promo-main .slider-icon-arrow:hover {
+    background-color: $accent-blue-header-color;
+    box-shadow: 10px 10px 30px rgba(1, 133, 255, 0.3);
+
+    & svg {
+        fill: $white-color;
+    }
+}
+
+//boost// 
+
+.insurance-promo-main .insurance-promo-boost__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.insurance-promo-main .insurance-promo-boost__icon {
+    fill: #A3A3A3;
+    margin-bottom: 34px;
+    transition: all .3s ease-in-out;
+
+}
+
+.insurance-promo-main .insurance-promo-boost__item-link:focus,
+.insurance-promo-main .insurance-promo-boost__item-link:hover {
+    text-decoration: none;
+}
+
+
+.insurance-promo-main .insurance-promo-boost__item-link:focus .insurance-promo-boost__icon,
+.insurance-promo-main .insurance-promo-boost__item-link:hover .insurance-promo-boost__icon {
+    fill: $dark-text;
+    cursor: pointer;
+
+}
+
+.insurance-promo-main .insurance-promo-boost__name {
+    font-size: $font-size-18;
+    font-weight: $font-weight-700;
+    text-transform: uppercase;
+    color: #A3A3A3;
+    transition: all .3s ease-in-out;
+}
+
+.insurance-promo-main .insurance-promo-boost__item-link:focus .insurance-promo-boost__name,
+.insurance-promo-main .insurance-promo-boost__item-link:hover .insurance-promo-boost__name {
+    color: $dark-text;
+}
+
+.insurance-promo-main .insurance-promo-boost__title {
+    margin-bottom: 28px;
+}
+
+
+@media (max-width:1198px) {
+    .insurance-promo-main .insurance-promo-banner__theme-purple {
+        background-position: -60px 0;
+    }
+
+    .insurance-promo-main .insurance-promo-banner__title {
+        font-size: 1.6rem;
+        line-height: 37px;
+    }
+
+    .insurance-promo-main .insurance-promo__step-second {
+        right: 230px;
+    }
+
+    .insurance-promo-main .insurance-promo__header-line {
+        padding-left: 43%;
+    }
+
+    .insurance-promo-main .ea-promo__sub-description,
+    .insurance-promo-main .ea-promo__description,
+    .insurance-promo-main .ea-promo__list {
+        margin-bottom: 30px;
+    }
+
+
+
+}
+
+
+@media (max-width:991.98px) {
+    .insurance-promo-main .insurance-promo-hero {
+        background-position: top;
+    }
+
+    .insurance-promo-main .insurance-promo__hero-title {
+        font-size: 2.3rem;
+    }
+
+    .insurance-promo-main .insurance-promo__hero-description {
+        font-size: $font-size-14;
+    }
+
+    .insurance-promo-main .insurance-promo__header-line::before {
+        width: 195px;
+    }
+
+    .insurance-promo-main .insurance-promo__header-line {
+        padding-left: 35%;
+    }
+
+    .insurance-promo-main .insurance-promo__title {
+        font-size: $font-size-25;
+    }
+
+    .insurance-promo-main .ea-promo-bonus__list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .insurance-promo-main .ea-promo-bonus__item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 30px;
+    }
+
+
+    .insurance-promo-main .ea-promo-bonus__icon {
+        margin-bottom: 0;
+    }
+
+    .insurance-promo-main .ea-promo-bonus__header {
+        font-size: $font-size-20;
+    }
+
+    .insurance-promo-main .insurance-promo__bonus__description {
+        font-size: $font-size-16;
+    }
+
+    .insurance-promo-main .ea-promo-bonus__item {
+        padding: 30px;
+    }
+
+    .insurance-promo-main .insurance-promo-part__list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .insurance-promo-main .insurance-promo-part__item {
+        display: grid;
+        grid-template-columns: 290px 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .insurance-promo-main .insurance-promo-part__img-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        width: 287px;
+        height: 152px;
+        border-radius: 60px;
+        margin-bottom: 0;
+    }
+
+    .insurance-promo-main .insurance-promo-part__icon {
+        margin-bottom: 0;
+        margin-left: 40px;
+    }
+
+    .insurance-promo-main .insurance-promo-part__footer-description {
+        font-size: $font-size-14;
+    }
+
+    .insurance-promo-main .insurance-promo-part__footer-header {
+        margin-bottom: 15px;
+    }
+
+    .insurance-promo-main .insurance-promo-part__header {
+        margin-bottom: 60px;
+    }
+
+    .insurance-promo-main .insurance-promo__step-first {
+        top: 170px;
+        left: 130px;
+    }
+
+    .insurance-promo-main .insurance-promo__dash-second,
+    .insurance-promo-main .insurance-promo__dash {
+        left: 7px;
+        width: 3px;
+        height: 46px;
+        background: repeating-linear-gradient(180deg, #F9FAFF 20px, #F9FAFF 30px, #098CFF 30px, #098CFF 40px);
+    }
+
+    .insurance-promo-main .insurance-promo__dash-second {
+        left: 50px;
+    }
+
+    .insurance-promo-main .insurance-promo__step-second {
+        right: unset;
+        left: 86px;
+        top: 400px;
+
+    }
+
+
+    @keyframes steps {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(20px);
+        }
+    }
+
+    .insurance-promo-main .insurance-promo-banner__title {
+        font-size: $font-size-30;
+    }
+
+
+
+    .insurance-promo-main .insurance-promo-banner__description {
+        font-size: $font-size-20;
+        line-height: 24px;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__description {
+        font-size: $font-size-14;
+        line-height: 21px;
+        max-width: 320px;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__item {
+        grid-template-columns: 250px 1fr;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__body {
+        padding: 30px 30px 30px 0;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__icon>svg {
+        margin-left: 68px;
+    }
+
+
+    .insurance-promo-main .insurance-promo-motivation__item>.insurance-promo__header,
+    .insurance-promo-main .insurance-promo-motivation__item>.insurance-promo__header .insurance-promo__description {
+        margin-bottom: 0;
+    }
+
+    .insurance-promo-main .ea-promo {
+        background: radial-gradient(113.9% 113.9% at 50% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 41.81%), #272F46;
+        padding-bottom: 70px;
+    }
+
+    .insurance-promo-main .ea-promo-banner__theme-blue {
+        background: radial-gradient(538px 538px at 50% 30%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%), #567CF1;
+    }
+
+    .insurance-promo-main .ea-promo-note {
+        padding: 20px;
+    }
+
+    .insurance-promo-main .ea-promo__motivation-text {
+        gap: 50px;
+    }
+
+    .insurance-promo-main .ea-promo-note__content {
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+        margin-left: 30px;
+    }
+
+
+
+}
+
+@media (max-width:767.98px) {
+    .insurance-promo-main .insurance-promo__header-line {
+        padding-left: 0;
+    }
+
+    .insurance-promo-main .insurance-promo__header-line::before {
+        top: -50px;
+        width: 100%;
+        background-color: #D9D9D9;
+    }
+
+    .insurance-promo-main .insurance-promo-part__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: flex-start;
+        gap: 40px;
+    }
+
+    .insurance-promo-main .insurance-promo-part__img-container {
+        width: 155px;
+        height: 152px;
+    }
+
+    .insurance-promo-main .insurance-promo-part__item {
+        grid-template-columns: auto 1fr;
+    }
+
+    .insurance-promo-main .insurance-promo__step-first {
+        left: 70px;
+    }
+
+    .insurance-promo-main .insurance-promo__step-second {
+        left: 28px;
+    }
+
+    .insurance-promo-main .insurance-promo-banner__title {
+        font-size: 1.5rem;
+    }
+
+    .insurance-promo-main .insurance-promo-boost__description {
+        max-width: 470px;
+    }
+
+
+    .insurance-promo-main .insurance-promo-slider__item {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 370px;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__icon>svg {
+        margin-left: 0;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: unset;
+        background-color: #47DFC5;
+        padding: 28px;
+    }
+
+
+    .insurance-promo-main .insurance-promo-slider__body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 28px;
+    }
+
+
+    .insurance-promo-main .ea-promo-note {
+        align-items: flex-start;
+    }
+
+    .insurance-promo-main .ea-promo-note__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .insurance-promo-main .ea-promo-note::before {
+        left: -111px;
+        top: -61px;
+        width: 240px;
+        height: 240px;
+    }
+
+    .insurance-promo-main .insurance-promo-banner__header {
+        padding-inline: 30px;
+    }
+
+}
+
+
+
+
+@media (max-width: 575.98px) {
+    .insurance-promo-main .ea-promo__list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .insurance-promo-main .ea-promo__header {
+        @include center-flex('all');
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .insurance-promo-main .ea-promo-note__content {
+        margin-left: 0;
+        gap: unset;
+    }
+
+    .insurance-promo-main .ea-promo-note__text {
+        margin-bottom: 20px;
+    }
+
+    .insurance-promo-main .ea-promo-note {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .insurance-promo-main .ea-promo-note__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .insurance-promo-main .ea-promo-note::before {
+        left: 140px;
+        top: -150px;
+    }
+
+    .insurance-promo-main .insurance-promo-part__icon {
+
+        filter: drop-shadow(-5px 5px 16px rgba(0, 0, 0, .5));
+    }
+
+    .insurance-promo-main .insurance-promo-banner__header {
+        padding: 0;
+    }
+
+    .insurance-promo-main .insurance-promo-padding {
+        padding: 50px 0;
+    }
+
+
+
+    .insurance-promo-slider__container.owl-theme .owl-dots .owl-dot span {
+        width: 25px;
+        height: 4px;
+    }
+
+
+    .insurance-promo-main .insurance-promo-banner__header,
+    .insurance-promo-main .insurance-promo__hero-header {
+        @include center-flex('all');
+        flex-direction: column;
+        text-align: center;
+        gap: unset;
+    }
+
+
+    .insurance-promo-main .insurance-promo-banner__description,
+    .insurance-promo-main .insurance-promo-banner__title,
+    .insurance-promo-main .insurance-promo__hero-description,
+    .insurance-promo-main .insurance-promo__hero-title {
+        margin-bottom: 30px;
+    }
+
+
+    .insurance-promo-part__heading,
+    .insurance-promo__header,
+    .insurance-promo-motivation__list {
+        text-align: center;
+    }
+
+
+    .insurance-promo-main .insurance-promo-part__heading {
+        font-size: $font-size-25;
+
+    }
+
+    .insurance-promo-main .insurance-promo-part__wrapper {
+        @include center-flex('all');
+        flex-direction: column;
+        text-align: center;
+        gap: unset;
+    }
+
+    .insurance-promo-main .insurance-promo-part__description {
+        margin-top: 30px;
+    }
+
+
+    .insurance-promo-main .insurance-promo__bonus__description {
+        font-size: 13px;
+    }
+
+    .insurance-promo-main .ea-promo-bonus__item {
+        padding: 15px;
+    }
+
+    .insurance-promo-main .ea-promo-bonus__item {
+        gap: 14px;
+    }
+
+    .insurance-promo-main .insurance-promo__header {
+        margin-bottom: 40px;
+    }
+
+    .insurance-promo-main .insurance-promo__description {
+        margin-bottom: 0;
+    }
+
+    .insurance-promo-main .insurance-promo-part__img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+
+    .insurance-promo-main .insurance-promo-part__icon {
+        max-width: 55px;
+        height: auto;
+        margin: 0;
+    }
+
+    .insurance-promo-main .insurance-promo__step-first {
+        top: 120px;
+        left: 37px;
+    }
+
+    .insurance-promo-main .insurance-promo__dash-second,
+    .insurance-promo-main .insurance-promo__dash {
+        height: 60px;
+    }
+
+    .insurance-promo-main .insurance-promo__step-second {
+        top: 60%;
+        left: -5px;
+    }
+
+
+    .insurance-promo-main .insurance-promo-banner__title {
+        font-size: 17px;
+        line-height: 27px;
+    }
+
+    .insurance-promo-main .insurance-promo-banner__description {
+        font-size: $font-size-14;
+    }
+
+
+    .insurance-promo-main .insurance-promo-boost__name {
+        font-size: 12px;
+    }
+
+    .insurance-promo-main .insurance-promo__title {
+        font-size: 1.1rem;
+
+    }
+}
+
+@media (max-width:375px) {
+    .insurance-promo-main .insurance-promo__dash-second, .insurance-promo-main .insurance-promo__dash {height: 100px;}
+    
+}
+
+@media (max-width: 320px) {
+    .insurance-promo-main .insurance-promo__hero-title {
+        font-size: 2.1rem;
+    }
+
+
+    .insurance-promo-main .insurance-promo-part__heading {
+        font-size: 1.4rem;
+    }
+
+    .insurance-promo-main .insurance-promo-boost__title {
+        font-size: $font-size-20;
+    }
+
+    .insurance-promo-main .insurance-promo-boost__description {
+        font-size: $font-size-14;
+    }
+
+    .insurance-promo-main .insurance-promo-slider__header {
+        font-size: $font-size-20;
+    }
+
+
+    .insurance-promo-main .insurance-promo-boost__icon {
+        height: 33px;
+    }
+
+    .insurance-promo-main .insurance-promo__step-first {
+        top: 140px;
+    }
+
+    .insurance-promo-main .insurance-promo__hero-header {
+        text-align: center;
+    }
+}
